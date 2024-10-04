@@ -11,7 +11,13 @@ const Navbar = () => {
         </div>
         {/* Connect Text */}
         <div className="text-white">
-          Connect
+          <ul className=''>
+            <li>
+              <a href="#" className="hover:">Home</a>
+              <a href="#" className="hover:underline ml-4">About</a>
+              <a href="#" className="hover:underline ml-4">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
