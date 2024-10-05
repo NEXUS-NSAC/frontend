@@ -11,6 +11,13 @@
   font-style: normal;
 }
 
+.app-container {
+  margin: 0 auto; /* Center the container */
+  padding: 0 16px; /* Adjust left and right padding as needed */
+  max-width: 1275px; /* Set a maximum width */
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

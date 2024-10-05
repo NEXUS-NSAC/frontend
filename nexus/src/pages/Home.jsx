@@ -4,8 +4,6 @@ import HomeElements from "../components/HomeElements";
 import CountUp from "react-countup";
 
 const Home = () => {
-  
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -59,31 +57,39 @@ const Home = () => {
     value: 35,
   };
 
+  const scrollToContent = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="relative p-8 text-center poppins-bold min-h-screen">
-      <h1 className="text-5xl font-bold -mb-1 raleway-variable">Welcome to Earth Dashboard</h1>
+    <div className="relative text-center poppins-bold min-h-screen">
+      <div className="h-screen sm:h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex text-center m-auto md:text-right mt-40 sm:col-span-1">
+            <h1 className="text-2xl font-bold raleway-variable sm:text-5xl">Welcome to Earth Dashboard</h1>
+          </div>
+          <div className="flex justify-center items-center">
+            <p className="poppins-regular">Lorem ipsum dolor sit amet...</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col -mt-10 items-center justify-center h-full sm:mt-10">
+          {" "}
+          {/* Added mt-10 for spacing */}
+          <div className="animate-bounce ">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10l9 9 9-9" />
+            </svg>
+          </div>
+          <p className="mt-2 text-white">Scroll Down</p>
+        </div>
+      </div>
 
       <div className="relative min-h-screen">
-        {/* <div className=" flex justify-center -translate-x-12 w-screen h-auto my-4 ">
-        
-          <model-viewer
-            alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-            src="/assets/earth4mb.glb" // Ensure this path is correct
-            ar
-            shadow-intensity="1"
-            auto-rotate
-            style={{ width: '100%', height: '350px' }} 
-            // camera-controls
-            touch-action="pan-y"
-            className="w-auto h-9/12"
-          ></model-viewer>
-        </div>  */}
-
-        {/* Blur Layer */}
-        {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 blur-lg z-10"></div>
-
-        {/* Text Layer */}
-       <div className="relative w-full h-full flex flex-col items-center justify-center text-white p-4">
+        <div className="relative w-full h-full flex flex-col items-center justify-center text-white p-4">
           <div className="flex flex-col md:flex-row justify-between items-center w-full my-5">
             <h2 className="text-4xl font-bold mb-2 md:mb-0">Earth Right Now!</h2>
             <h2 className="bg-gray-700 hover:bg-purple-750 text-white font-bold py-2 px-4 rounded">OCT 2022</h2>
@@ -92,7 +98,6 @@ const Home = () => {
           <div className="flex justify-between items-center h-10 w-full"></div>
 
           <div className="grid gap-3 grid-cols-1 lg:grid-cols-4 mb-8 w-full  ">
-           
             <div className="flex flex-col items-center my-5">
               <div className="relative group w-full h-44 flex justify-center items-center">
                 <svg className="w-full h-full" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" style={{ fill: getColor(people.value) }}>
@@ -222,9 +227,7 @@ const Home = () => {
               <span className="mt-2 font-bold text-7xl" style={{ color: getColor(people.value) }}>
                 <CountUp className="text-7xl" start={people.value / 2} end={people.value} duration={Math.random() * 10} suffix="%" />
               </span>
-              <p className="poppins-regular mt-3 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?
-              </p>
+              <p className="poppins-regular mt-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?</p>
             </div>
 
             <div className="flex flex-col items-center my-5">
@@ -237,24 +240,21 @@ const Home = () => {
               <span className="mt-2 font-bold" style={{ color: getColor(animals.value) }}>
                 <CountUp className="text-7xl" start={animals.value / 2} end={animals.value} duration={Math.random() * 10} suffix="%" />
               </span>
-              <p className="poppins-regular mt-3 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?
-              </p>
+              <p className="poppins-regular mt-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?</p>
             </div>
 
             <div className="flex flex-col items-cente my-5">
               <div className="relative group w-full h-44 flex justify-center items-center">
                 <svg className="w-full h-full" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style={{ fill: getColor(tree.value) }}>
-                  <path d="m294.81 496.986h-279.81v-8.1c0-12.958 10.542-23.5 23.5-23.5h151.91c4.142 0 7.5-3.358 7.5-7.5s-3.358-7.5-7.5-7.5h-35.63v-62.619h23.564c38.391 0 69.625-31.233 69.625-69.625 0-4.142-3.358-7.5-7.5-7.5h-19.025c16.146-12.762 26.525-32.514 26.525-54.645 0-4.142-3.358-7.5-7.5-7.5h-18.974c16.117-12.763 26.474-32.497 26.474-54.604 0-4.142-3.358-7.5-7.5-7.5h-19c16.131-12.763 26.5-32.505 26.5-54.625v-62.13c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v54.631h-16.062v-54.631c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v55.033c-8.53.918-16.603 3.382-23.933 7.106 5.88-13.428 8.053-28.238 6.174-43.219-2.65-21.138-13.032-39.955-29.368-53.392l.002-27.653c0-4.142-3.357-7.5-7.5-7.5-4.142 0-7.5 3.357-7.5 7.5l-.002 27.649c-16.339 13.436-26.723 32.255-29.374 53.395-1.878 14.979.294 29.787 6.172 43.214-7.327-3.721-15.395-6.183-23.92-7.1v-55.033c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v54.631h-16.063v-54.631c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v62.131c0 22.119 10.368 41.862 26.5 54.625h-19c-4.142 0-7.5 3.358-7.5 7.5 0 22.107 10.357 41.841 26.474 54.604h-18.974c-4.142 0-7.5 3.358-7.5 7.5 0 22.131 10.379 41.883 26.525 54.645h-19.025c-4.142 0-7.5 3.358-7.5 7.5 0 38.391 31.233 69.625 69.625 69.625h23.56v62.619h-101.28c-21.229 0-38.5 17.271-38.5 38.5v15.6c0 4.142 3.358 7.5 7.5 7.5h287.31c4.142 0 7.5-3.358 7.5-7.5s-3.358-7.501-7.5-7.501zm-128.528-295.592c-7.893 6.244-14.406 14.16-19 23.207-4.594-9.047-11.107-16.963-19-23.207zm-.026 62.125c-7.881 6.241-14.385 14.149-18.974 23.186-4.589-9.037-11.093-16.945-18.974-23.186zm.052 62.104c-7.904 6.247-14.426 14.17-19.025 23.227-4.599-9.057-11.121-16.98-19.025-23.227zm12.036 47.145h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.145h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.104h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.125h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.585-26.535 47.125-54.111 47.125zm-53.054-95.971c2.056-16.396 9.799-31.087 21.988-41.938 31.077 27.665 26.575 73.37 0 102.099-15.03-16.115-24.794-37.782-21.988-60.161zm-63.182 48.847h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.048c-27.576-.001-50.445-20.541-54.112-47.125zm0 62.124h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.048c-27.576 0-50.445-20.541-54.112-47.125zm0 62.104h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.048c-27.576 0-50.445-20.541-54.112-47.125zm54.112 109.27c-27.576 0-50.445-20.541-54.111-47.125h23.049c27.576 0 50.445 20.541 54.111 47.125z"/><path d="m473.5 450.387h-101.281l-.008-62.615h23.569c12.421 0 24.616-3.315 35.266-9.587 3.569-2.102 4.759-6.7 2.657-10.269-2.102-3.568-6.698-4.759-10.269-2.657-8.346 4.915-17.909 7.513-27.655 7.513h-23.053c1.602-11.75 6.961-22.602 15.486-31.127 10.32-10.32 24.038-16.003 38.626-16.003h23.043c-.924 6.679-3.076 13.154-6.355 19.04-2.016 3.619-.716 8.186 2.902 10.202 3.618 2.015 8.186.716 10.202-2.902 5.736-10.297 8.768-21.999 8.768-33.84 0-4.142-3.358-7.5-7.5-7.5h-19.019c16.145-12.762 26.524-32.513 26.524-54.644 0-4.142-3.358-7.5-7.5-7.5h-18.974c16.117-12.763 26.474-32.497 26.474-54.604 0-4.142-3.358-7.5-7.5-7.5h-19c16.131-12.763 26.5-32.505 26.5-54.625v-62.131c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v54.631h-16.062v-54.631c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v55.033c-8.521.917-16.587 3.377-23.911 7.096 5.876-13.425 8.048-28.231 6.17-43.208-2.65-21.138-13.032-39.955-29.368-53.392l.002-27.653c0-4.142-3.357-7.5-7.5-7.5-4.142 0-7.5 3.357-7.5 7.5l-.002 27.649c-16.338 13.436-26.723 32.256-29.374 53.395-1.879 14.983.295 29.795 6.176 43.225-7.332-3.727-15.408-6.193-23.941-7.111v-55.034c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v54.631h-16.062v-54.631c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v62.131c0 22.119 10.368 41.862 26.5 54.625h-19c-4.142 0-7.5 3.358-7.5 7.5 0 22.107 10.357 41.841 26.474 54.604h-18.974c-4.142 0-7.5 3.358-7.5 7.5 0 22.131 10.379 41.883 26.525 54.645h-19.025c-4.142 0-7.5 3.358-7.5 7.5 0 38.391 31.233 69.625 69.625 69.625h23.555l.008 62.619h-134.129c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5h250.41c12.958 0 23.5 10.542 23.5 23.5v8.1h-169.5c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5h177c4.142 0 7.5-3.358 7.5-7.5v-15.6c0-21.229-17.271-38.5-38.5-38.5zm-108.806-101.583c-4.598-9.038-11.111-16.944-19.002-23.181h37.989c-2.112 1.675-4.14 3.481-6.074 5.416-5.289 5.289-9.623 11.28-12.913 17.765zm19.023-147.41c-7.893 6.244-14.406 14.16-19 23.207-4.594-9.047-11.107-16.963-19-23.207zm-.026 62.125c-7.881 6.241-14.385 14.149-18.974 23.186-4.589-9.037-11.093-16.945-18.974-23.186zm12.089 47.104h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.104h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.125h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.585-26.535 47.125-54.111 47.125zm-53.038-95.971c2.056-16.396 9.799-31.087 21.987-41.937 31.078 27.664 26.576 73.37 0 102.099-15.029-16.116-24.794-37.784-21.987-60.162zm-63.198 48.847h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.049c-27.575-.001-50.444-20.541-54.111-47.125zm0 62.124h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.049c-27.575 0-50.444-20.541-54.111-47.125zm0 62.104h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.049c-27.575 0-50.444-20.541-54.111-47.125zm54.112 109.27c-27.576 0-50.445-20.541-54.111-47.125h23.049c27.576 0 50.445 20.541 54.111 47.125z"/>
-                  </svg>
+                  <path d="m294.81 496.986h-279.81v-8.1c0-12.958 10.542-23.5 23.5-23.5h151.91c4.142 0 7.5-3.358 7.5-7.5s-3.358-7.5-7.5-7.5h-35.63v-62.619h23.564c38.391 0 69.625-31.233 69.625-69.625 0-4.142-3.358-7.5-7.5-7.5h-19.025c16.146-12.762 26.525-32.514 26.525-54.645 0-4.142-3.358-7.5-7.5-7.5h-18.974c16.117-12.763 26.474-32.497 26.474-54.604 0-4.142-3.358-7.5-7.5-7.5h-19c16.131-12.763 26.5-32.505 26.5-54.625v-62.13c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v54.631h-16.062v-54.631c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v55.033c-8.53.918-16.603 3.382-23.933 7.106 5.88-13.428 8.053-28.238 6.174-43.219-2.65-21.138-13.032-39.955-29.368-53.392l.002-27.653c0-4.142-3.357-7.5-7.5-7.5-4.142 0-7.5 3.357-7.5 7.5l-.002 27.649c-16.339 13.436-26.723 32.255-29.374 53.395-1.878 14.979.294 29.787 6.172 43.214-7.327-3.721-15.395-6.183-23.92-7.1v-55.033c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v54.631h-16.063v-54.631c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v62.131c0 22.119 10.368 41.862 26.5 54.625h-19c-4.142 0-7.5 3.358-7.5 7.5 0 22.107 10.357 41.841 26.474 54.604h-18.974c-4.142 0-7.5 3.358-7.5 7.5 0 22.131 10.379 41.883 26.525 54.645h-19.025c-4.142 0-7.5 3.358-7.5 7.5 0 38.391 31.233 69.625 69.625 69.625h23.56v62.619h-101.28c-21.229 0-38.5 17.271-38.5 38.5v15.6c0 4.142 3.358 7.5 7.5 7.5h287.31c4.142 0 7.5-3.358 7.5-7.5s-3.358-7.501-7.5-7.501zm-128.528-295.592c-7.893 6.244-14.406 14.16-19 23.207-4.594-9.047-11.107-16.963-19-23.207zm-.026 62.125c-7.881 6.241-14.385 14.149-18.974 23.186-4.589-9.037-11.093-16.945-18.974-23.186zm.052 62.104c-7.904 6.247-14.426 14.17-19.025 23.227-4.599-9.057-11.121-16.98-19.025-23.227zm12.036 47.145h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.145h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.104h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.125h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.585-26.535 47.125-54.111 47.125zm-53.054-95.971c2.056-16.396 9.799-31.087 21.988-41.938 31.077 27.665 26.575 73.37 0 102.099-15.03-16.115-24.794-37.782-21.988-60.161zm-63.182 48.847h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.048c-27.576-.001-50.445-20.541-54.112-47.125zm0 62.124h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.048c-27.576 0-50.445-20.541-54.112-47.125zm0 62.104h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.048c-27.576 0-50.445-20.541-54.112-47.125zm54.112 109.27c-27.576 0-50.445-20.541-54.111-47.125h23.049c27.576 0 50.445 20.541 54.111 47.125z" />
+                  <path d="m473.5 450.387h-101.281l-.008-62.615h23.569c12.421 0 24.616-3.315 35.266-9.587 3.569-2.102 4.759-6.7 2.657-10.269-2.102-3.568-6.698-4.759-10.269-2.657-8.346 4.915-17.909 7.513-27.655 7.513h-23.053c1.602-11.75 6.961-22.602 15.486-31.127 10.32-10.32 24.038-16.003 38.626-16.003h23.043c-.924 6.679-3.076 13.154-6.355 19.04-2.016 3.619-.716 8.186 2.902 10.202 3.618 2.015 8.186.716 10.202-2.902 5.736-10.297 8.768-21.999 8.768-33.84 0-4.142-3.358-7.5-7.5-7.5h-19.019c16.145-12.762 26.524-32.513 26.524-54.644 0-4.142-3.358-7.5-7.5-7.5h-18.974c16.117-12.763 26.474-32.497 26.474-54.604 0-4.142-3.358-7.5-7.5-7.5h-19c16.131-12.763 26.5-32.505 26.5-54.625v-62.131c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v54.631h-16.062v-54.631c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v55.033c-8.521.917-16.587 3.377-23.911 7.096 5.876-13.425 8.048-28.231 6.17-43.208-2.65-21.138-13.032-39.955-29.368-53.392l.002-27.653c0-4.142-3.357-7.5-7.5-7.5-4.142 0-7.5 3.357-7.5 7.5l-.002 27.649c-16.338 13.436-26.723 32.256-29.374 53.395-1.879 14.983.295 29.795 6.176 43.225-7.332-3.727-15.408-6.193-23.941-7.111v-55.034c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v54.631h-16.062v-54.631c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v62.131c0 22.119 10.368 41.862 26.5 54.625h-19c-4.142 0-7.5 3.358-7.5 7.5 0 22.107 10.357 41.841 26.474 54.604h-18.974c-4.142 0-7.5 3.358-7.5 7.5 0 22.131 10.379 41.883 26.525 54.645h-19.025c-4.142 0-7.5 3.358-7.5 7.5 0 38.391 31.233 69.625 69.625 69.625h23.555l.008 62.619h-134.129c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5h250.41c12.958 0 23.5 10.542 23.5 23.5v8.1h-169.5c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5h177c4.142 0 7.5-3.358 7.5-7.5v-15.6c0-21.229-17.271-38.5-38.5-38.5zm-108.806-101.583c-4.598-9.038-11.111-16.944-19.002-23.181h37.989c-2.112 1.675-4.14 3.481-6.074 5.416-5.289 5.289-9.623 11.28-12.913 17.765zm19.023-147.41c-7.893 6.244-14.406 14.16-19 23.207-4.594-9.047-11.107-16.963-19-23.207zm-.026 62.125c-7.881 6.241-14.385 14.149-18.974 23.186-4.589-9.037-11.093-16.945-18.974-23.186zm12.089 47.104h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.104h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.584-26.535 47.125-54.111 47.125zm0-62.125h-23.049c3.667-26.584 26.536-47.125 54.111-47.125h23.049c-3.666 26.585-26.535 47.125-54.111 47.125zm-53.038-95.971c2.056-16.396 9.799-31.087 21.987-41.937 31.078 27.664 26.576 73.37 0 102.099-15.029-16.116-24.794-37.784-21.987-60.162zm-63.198 48.847h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.049c-27.575-.001-50.444-20.541-54.111-47.125zm0 62.124h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.049c-27.575 0-50.444-20.541-54.111-47.125zm0 62.104h23.049c27.576 0 50.445 20.541 54.111 47.125h-23.049c-27.575 0-50.444-20.541-54.111-47.125zm54.112 109.27c-27.576 0-50.445-20.541-54.111-47.125h23.049c27.576 0 50.445 20.541 54.111 47.125z" />
+                </svg>
                 <div className="absolute bottom-full mb-2 bg-gray-700 text-white text-xs rounded py-1 px-2">{tree.name}</div>
               </div>
               <span className="mt-2 font-bold text-7xl" style={{ color: getColor(tree.value) }}>
                 <CountUp start={tree.value / 2} end={tree.value} duration={Math.random() * 10} suffix="%" />
               </span>
-              <p className="poppins-regular mt-3 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?
-              </p>
+              <p className="poppins-regular mt-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?</p>
             </div>
 
             <div className="flex flex-col items-center my-5">
@@ -276,16 +276,12 @@ const Home = () => {
               <span className="mt-2 font-bold text-7xl" style={{ color: getColor(seaLevel.value) }}>
                 <CountUp start={seaLevel.value / 2} end={seaLevel.value} duration={Math.random() * 10} suffix="%" />
               </span>
-              <p className="poppins-regular mt-3 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?
-              </p>
+              <p className="poppins-regular mt-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?</p>
             </div>
-             
           </div>
 
           {/* small gap */}
           <div className="flex justify-between items-center h-20 w-full"></div>
-
 
           {/* second part */}
           <div className="flex flex-col md:flex-row justify-between items-center w-full my-5">

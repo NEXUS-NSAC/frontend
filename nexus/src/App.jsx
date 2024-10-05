@@ -12,6 +12,7 @@ const App = () => {
   return (
     <>
       <Navbar />
+      <div className="app-container">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/simulator" element={<Simulator />} />
@@ -20,6 +21,7 @@ const App = () => {
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/model-viewer" element={<ModelViewerPage />} /> */}
       </Routes>
+      </div>
       <Footer />
     </>
   );
