@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define a CSS class for the Raleway font */
+.raleway-variable {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Adjust weight as needed */
+  font-style: normal;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
