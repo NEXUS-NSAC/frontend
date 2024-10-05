@@ -1,5 +1,6 @@
 // src/components/Navbar.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -13,9 +14,9 @@ const Navbar = () => {
         <div className="text-white">
           <ul className=''>
             <li>
-              <a href="#" className="hover:">Home</a>
-              <a href="#" className="hover:underline ml-4">About</a>
-              <a href="#" className="hover:underline ml-4">Contact</a>
+              <Link to="/" className="hover:underline">Home</Link>
+              <Link to="/simulate" className="hover:underline ml-4">Simulate</Link>
+              <Link to="/wiki" className="hover:underline ml-4">Wiki</Link>
             </li>
           </ul>
         </div>
