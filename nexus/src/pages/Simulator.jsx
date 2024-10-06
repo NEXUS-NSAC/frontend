@@ -43,7 +43,7 @@ const Simulator = () => {
           </div>
 
           <div className="md:col-span-4 ">
-            <SimElement temperature={233} uvIndex={3} seaLevel={4} airQuality={5} />
+            <SimElement Temperature="ss" airQuality="222" uvIndex="s" />
           </div>
         </div>
       </div>

@@ -156,6 +156,7 @@
 .custom-underline {
   position: relative;
   text-decoration: none;
+  border-radius: 5px;;
 }
 
 .custom-underline::after {
@@ -175,5 +176,5 @@
 }
 
 .active-underline::after {
-  background-color: yellow; /* Change underline color to yellow when active */
+  background-color: yellowgreen; /* Change underline color to yellow when active */
 }

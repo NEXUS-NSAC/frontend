@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "label": "Temperature",
+      "value": 25,
+      "suffix": "  °C",
+      "details": "Details about Temperature and other data"
+    },
+    {
+      "label": "UV Index",
+      "value": 5,
+      "suffix": "",
+      "details": "Details about UV Index"
+    },
+    {
+      "label": "Sea Level",
+      "value": 10,
+      "suffix": " m",
+      "details": "Details about Sea Level"
+    },
+    {
+      "label": "Air Quality",
+      "value": "Good",
+      "suffix": "",
+      "details": "Details about Air Quality"
+    },
+    {
+      "label": "Humidity",
+      "value": 50,
+      "suffix": "%",
+      "details": "Details about Humidity"
+    },
+    {
+      "label": "Wind Speed",
+      "value": 10,
+      "suffix": "km/h",
+      "details": "Details about Wind Speed"
+    },
+    {
+      "label": "Precipitation",
+      "value": 0,
+      "suffix": "mm",
+      "details": "Details about Precipitation"
+    },
+    {
+      "label": "Visibility",
+      "value": 10,
+      "suffix": "km",
+      "details": "Details about Visibility"
+    },
+    {
+      "label": "Cloud Cover",
+      "value": 10,
+      "suffix": "%",
+      "details": "Details about Cloud Cover"
+    },
+    {
+      "label": "Pressure",
+      "value": 1000,
+      "suffix": "hPa",
+      "details": "Details about Pressure"
+    },
+    {
+      "label": "Dew Point",
+      "value": 0,
+      "suffix": "°C",
+      "details": "Details about Dew Point"
+    },
+    {
+      "label": "Ozone",
+      "value": 0,
+      "suffix": "DU",
+      "details": "Details about Ozone"
+    }
+  ]
+}
