@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SimElement from "../components/SimElements";
-import SimImage from "../components/simImage";
+import SimImage from "../components/SimImage";
 import simData from "../data/sim.json"; // Adjust the path as needed
 import Sim from "../data/simPage.json";
 
@@ -53,19 +53,29 @@ const Simulator = () => {
   };
 
   const handleMonthChange = (event) => {
-    setSelectedMonth(event.target.value);
-  };
+    const month = event.target.value;
+    setSelectedMonth(month);
 
-  const handleSimulate = () => {
-    if (selectedMonth) {
+    if (month) {
       // Make a backend request to fetch data for the selected month
-      fetch(`/api/data?month=${selectedMonth}`)
+      fetch('http://127.0.0.1:8000/generate/generate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ month }),
+      })
         .then((response) => response.json())
         .then((data) => {
-          setElements(data.elements);
+          console.log('Data fetched:', data);
+          // Merge the received data with the existing state
+          setElements((prevElements) => ({
+            ...prevElements,
+            ...data,
+          }));
         })
         .catch((error) => {
-          console.error("Error fetching data:", error);
+          console.error('Error fetching data:', error);
         });
     }
   };
