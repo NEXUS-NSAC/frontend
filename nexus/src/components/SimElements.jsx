@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import simData from "../data/sim.json"; // Adjust the path as needed
@@ -22,9 +22,11 @@ const SimElement = (props) => {
     return Math.floor(index / 4) * 5 + 4;
   };
 
+  const dataEntries = Object.entries(simData.data);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-      {simData.data.map((item, index) => (
+      {dataEntries.map(([key, item], index) => (
         <React.Fragment key={index}>
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -37,7 +39,7 @@ const SimElement = (props) => {
             </div>
             <p className="text-lg font-bold">{item.label}</p>
             <p className="mt-2 text-lg font-bold">
-              <CountUp start={props[item.label] ? props[item.label] / 2 : item.value / 2} end={props[item.label] ? props[item.label] : item.value} duration={Math.random() * 10} suffix={item.suffix} />
+              <CountUp start={props[key] ? props[key] / 2 : item.value / 2} end={props[key] ? props[key] : item.value} duration={Math.random() * 10} suffix={item.suffix} />
             </p>
           </motion.div>
           {selectedItem === index && (
@@ -59,6 +61,5 @@ const SimElement = (props) => {
     </div>
   );
 };
-
 
 export default SimElement;

@@ -1,76 +1,94 @@
 {
-  "data": [
-    {
-      "label": "Temperature",
-      "value": 25,
-      "suffix": "  °C",
+  "data": {
+    "AirQualityIndex": {
+      "label": "Air Quality Index",
+      "value": 0,
+      "suffix": "",
       "details": "Details about Temperature and other data"
     },
-    {
-      "label": "UV Index",
-      "value": 5,
+    "GlacierMassBalance": {
+      "label": "Glacier Mass Balance",
+      "value": 0,
       "suffix": "",
-      "details": "Details about UV Index"
+      "details": "Connected to atmospheric temperature, solar radiation absorption, and snow cover. Influences sea level and water availability."
     },
-    {
-      "label": "Sea Level",
-      "value": 10,
-      "suffix": " m",
-      "details": "Details about Sea Level"
-    },
-    {
-      "label": "Air Quality",
-      "value": "Good",
-      "suffix": "",
-      "details": "Details about Air Quality"
-    },
-    {
-      "label": "Humidity",
-      "value": 50,
-      "suffix": "%",
-      "details": "Details about Humidity"
-    },
-    {
-      "label": "Wind Speed",
-      "value": 10,
-      "suffix": "km/h",
-      "details": "Details about Wind Speed"
-    },
-    {
+    "Precipitation": {
       "label": "Precipitation",
       "value": 0,
-      "suffix": "mm",
-      "details": "Details about Precipitation"
+      "suffix": "",
+      "details": "Affects water quality, soil composition, forest cover, and erosion rates. Linked to changes in atmospheric temperature and greenhouse gases."
     },
-    {
-      "label": "Visibility",
-      "value": 10,
-      "suffix": "km",
-      "details": "Details about Visibility"
-    },
-    {
-      "label": "Cloud Cover",
-      "value": 10,
-      "suffix": "%",
-      "details": "Details about Cloud Cover"
-    },
-    {
-      "label": "Pressure",
-      "value": 1000,
-      "suffix": "hPa",
-      "details": "Details about Pressure"
-    },
-    {
-      "label": "Dew Point",
+    "GreenhouseGasesCO2COCH4": {
+      "label": "Greenhouse Gases (CO2, CO, CH4)",
       "value": 0,
-      "suffix": "°C",
-      "details": "Details about Dew Point"
+      "suffix": "",
+      "details": "Elevates atmospheric temperature, alters precipitation, impacts solar radiation absorption, and contributes to glacier mass loss."
     },
-    {
-      "label": "Ozone",
+    "AtmosphericTemperature": {
+      "label": "Atmospheric Temperature",
       "value": 0,
-      "suffix": "DU",
+      "suffix": "",
+      "details": "Influences greenhouse gas levels, precipitation patterns, sea surface temperature (SST), and snow cover duration."
+    },
+    "SolarRadiationAbsorption": {
+      "label": "Solar Radiation Absorption",
+      "value": 0,
+      "suffix": "",
+      "details": "Alters atmospheric temperature, greenhouse gas effects, SST, and snow cover. Affected by atmospheric composition and land cover."
+    },
+    "ErosionRates": {
+      "label": "Erosion Rates",
+      "value": 0,
+      "suffix": "",
+      "details": "Tied to soil quality, precipitation, forest cover, and water quality. Accelerated by deforestation and extreme weather events."
+    },
+    "SnowCoverDuration": {
+      "label": "Snow Cover Duration",
+      "value": 0,
+      "suffix": "",
+      "details": "Related to atmospheric temperature, glacier mass balance, and solar radiation absorption. Impacts water availability and albedo effect."
+    },
+    "SeaTemperatureSST": {
+      "label": "Sea Temperature (SST)",
+      "value": 0,
+      "suffix": "",
+      "details": "Impacts ocean life, alters water quality, and influences precipitation patterns. Affected by greenhouse gases and solar radiation absorption."
+    },
+    "WaterQualityIndicatorsPH": {
+      "label": "Water Quality Indicators (pH)",
+      "value": 0,
+      "suffix": "",
+      "details": "Interact with SST, precipitation, and erosion. Affected by atmospheric pollution and greenhouse gas levels."
+    },
+    "SoilCompositionAndQuality": {
+      "label": "Soil Composition and Quality",
+      "value": 0,
+      "suffix": "",
+      "details": "Affected by precipitation, erosion rates, and forest cover. Impacts plant growth, water quality, and biodiversity."
+    },
+    "Disasters": {
+      "label": "Disasters",
+      "value": 0,
+      "suffix": "",
+      "details": "Details about Ozone"
+    },
+    "ForestCover": {
+      "label": "Forest Cover",
+      "value": 0,
+      "suffix": "",
+      "details": "Regulates atmospheric CO2, influences soil composition, erosion rates, and biodiversity indices. Affected by changes in precipitation and temperature."
+    },
+    "BiodiversityIndices": {
+      "label": "Biodiversity Indices",
+      "value": 0,
+      "suffix": "",
+      "details": "Influenced by forest cover, atmospheric conditions, precipitation, and soil quality. Affected by habitat changes and climate variables."
+    },
+    "EnergyWasteAndSustainableEnergy": {
+      "label": "Energy Waste & Sustainable Energy",
+      "value": 0,
+      "suffix": "",
       "details": "Details about Ozone"
     }
-  ]
+  }
 }

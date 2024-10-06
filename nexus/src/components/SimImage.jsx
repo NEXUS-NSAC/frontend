@@ -13,28 +13,28 @@ const SimImage = (props) => {
 
   return (
     <>
-      {affected === "People" && (
+      {affected === "Human Life" && (
         <>
           <People className="w-20 h-20" style={{ color: props.color, width: "100%", height: "90%", fill: props.color }} />
-          <CountUp className="text-7xl" start={props.value / 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} />
+          <CountUp className="text-7xl" start={props.value / 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix}  style={{ color: props.color }} />
         </>
       )}
-      {affected === "Biosphere" && (
+      {affected === "Animal Life" && (
         <>
           <BiosphereSvg className="w-20 h-20" style={{ color: props.color, width: "100%", height: "90%", fill: props.color }} />
-          <CountUp className="text-7xl" start={props.value/ 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} />
+          <CountUp className="text-7xl" start={props.value/ 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix}  style={{ color: props.color }}/>
         </>
       )}
       {affected === "Agriculture" && (
         <>
           <AgriSvg className="w-20 h-20" style={{ color: props.color, width: "100%", height: "90%", fill: props.color }} />
-          <CountUp className="text-7xl" start={props.value/ 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} />
+          <CountUp className="text-7xl" start={props.value/ 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix}  style={{ color: props.color }} />
         </>
       )}
-      {affected === "Sea Life" && (
+      {affected === "Aquatic Life" && (
         <>
           <SeaLifeSvg className="w-20 h-20" style={{ color: props.color, width: "100%", height: "90%", fill: props.color }} />
-          <CountUp className="text-7xl" start={props.value/ 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} />
+          <CountUp className="text-7xl" start={props.value/ 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix}  style={{ color: props.color }} />
         </>
       )}
     </>
