@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SimElement from "../components/SimElements";
 import SimImage from "../components/SimImage";
-import simData from "../data/sim.json"; // Adjust the path as needed
+import SimData from "../data/sim.json"; // Adjust the path as needed
 import Sim from "../data/simPage.json";
 
 const Simulator = () => {
@@ -57,15 +57,48 @@ const Simulator = () => {
     setSelectedMonth(month);
 
     if (month) {
+      // Construct the request body
+      const requestBody = {
+        extremeHeat: 3,
+        tropicalCyclones: 4,
+        earthquakesAndVolcanoes: 2,
+        floods: 0,
+        landslides: 0,
+        globalPrimaryEnergyConsumption: 7,
+        airQuality: 6,
+        glacierMassBalance: -3,
+        precipitation: 8,
+        greenhouseGases: 9,
+        atmosphericTemperature: 7.0,
+        solarRadiationAbsorption: 5,
+        erosionRates: 4,
+        snowCoverDuration: 2,
+        seaSurfaceTemperature: 7.0,
+        waterQualityIndicators: 3,
+        forestCover: 6,
+        soilCompositionAndQuality: 5,
+        animalImpact: 0,
+        humanImpact: 0,
+        treeImpact: 0,
+        aquaticImpact: 0,
+        disasters: 3,
+        month: month, // Include the selected month
+      };
+
       // Make a backend request to fetch data for the selected month
       fetch('http://127.0.0.1:8000/generate/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ month }),
+        body: JSON.stringify(requestBody),
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
         .then((data) => {
           console.log('Data fetched:', data);
           // Merge the received data with the existing state
@@ -162,7 +195,9 @@ const Simulator = () => {
         <div className="grid grid-cols-1 md:grid-cols-9 gap-2 my-20">
           {Object.keys(elements).map((key, index) => (
             <div key={index} className="flex flex-col items-center p-2 border border-gray-700 rounded-lg">
-              <label className="text-xs font-bold mb-2 text-center break-words">{simData.data[key].label}</label>
+              <label className="text-xs font-bold mb-2 text-center break-words">
+                {SimData.data[key] ? SimData.data[key].label : "Unknown"}
+              </label>
               <div className="flex-grow"></div> {/* Spacer to push the slider to the bottom */}
               <input type="range" min="0" max="5" value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="slider-vertical" style={{ writingMode: "bt-lr", WebkitAppearance: "slider-vertical" }} />
               <input type="number" min="0" max="5" value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="mt-2 w-12 text-center bg-gray-700 text-white rounded" />
