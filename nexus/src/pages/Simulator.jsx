@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { SimElement } from "../components/SimElements";
-
-import People from "../assets/svg/People";
-import BiosphereSvg from "../assets/svg/Biosphere";
-import AgriSvg from "../assets/svg/Agri";
-import SeaLifeSvg from "../assets/svg/SeaLife";
+import SimElement  from "../components/SimElements";
+import SimImage from "../components/simImage";
 
 const Simulator = () => {
   const [affected, setAffected] = useState("");
@@ -54,11 +50,7 @@ const Simulator = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           <div className="sm:col-span-1">
             <div className="bg-gray-800 p-4 rounded-lg">
-              {/* {affected === "People" && <People className="w-20 h-20" style={{ color: color, width: '100%', height: '90%'  , fill:color }}/> <CountUp className="text-7xl" start={props.value / 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} />}
-              {affected === "Biosphere" && <BiosphereSvg className="w-20 h-20" style={{ color: color, width: '100%', height: '90%'  , fill:color }} />}
-              {affected === "Agriculture" && <AgriSvg className="w-20 h-20" style={{ color: color, width: '100%', height: '90%'  , fill:color }} />}
-              {affected === "Sea Life" && <SeaLifeSvg className="w-20 h-20" style={{ color: color, width: '100%', height: '90%'  , fill:color }} />} */}
-
+            <SimImage affected={affected} value={50} color={color} suffix="%" />
             </div>
           </div>
 

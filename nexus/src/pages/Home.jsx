@@ -1,61 +1,42 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import HomeElements from "../components/HomeElements";
-import CountUp from "react-countup";
 import home from "../data/homePage.json";
 
 const Home = () => {
-  const getColor = (value) => {
-    if (value > 75) return "#22c55e"; // green-500
-    if (value > 65) return "#eab308"; // yellow-500
-    if (value > 55) return "#f97316"; // orange-500
-    if (value > 45) return "#ef4444"; // red-500
-    return "#b91c1c"; // red-700
+  const [selectedMonth, setSelectedMonth] = useState("");
+  const [elements, setElements] = useState([]);
+  const months = [
+    { name: "January", value: "2023-01" },
+    { name: "February", value: "2023-02" },
+    { name: "March", value: "2023-03" },
+    { name: "April", value: "2023-04" },
+    { name: "May", value: "2023-05" },
+    { name: "June", value: "2023-06" },
+    { name: "July", value: "2023-07" },
+    { name: "August", value: "2023-08" },
+    { name: "September", value: "2023-09" },
+    { name: "October", value: "2023-10" },
+    { name: "November", value: "2023-11" },
+    { name: "December", value: "2023-12" },
+  ];
+
+  const handleChange = (event) => {
+    setSelectedMonth(event.target.value);
   };
 
-  const months = ["JAN 2022", "FEB 2022", "MAR 2022", "APR 2022", "MAY 2022", "JUN 2022", "JUL 2022", "AUG 2022", "SEP 2022", "OCT 2022", "NOV 2022", "DEC 2022"];
-
-  const people = {
-    name: "People",
-    value: 99,
-  };
-
-  const animals = {
-    name: "Animal Life",
-    value: 55,
-  };
-
-  const tree = {
-    name: "Tree",
-    value: 70,
-  };
-
-  const temperature = {
-    name: "Temperature",
-    value: 65,
-  };
-
-  const uvIndex = {
-    name: "UV Index",
-    value: 55,
-  };
-
-  const seaLevel = {
-    name: "Sea Level",
-    value: 45,
-  };
-
-  const airQuality = {
-    name: "Air Quality",
-    value: 35,
-  };
-
-  const scrollToContent = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
-  };
+  // useEffect(() => {
+  //   if (selectedMonth) {
+  //     // Make a backend request to fetch data for the selected month
+  //     axios
+  //       .get(`/api/data?month=${selectedMonth}`)
+  //       .then((response) => {
+  //         setElements(response.data.elements);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching data:", error);
+  //       });
+  //   }
+  // }, [selectedMonth]);
 
   return (
     <div className="relative text-center poppins-bold min-h-screen">
@@ -92,29 +73,37 @@ const Home = () => {
 
           <div className="grid gap-3 grid-cols-1 lg:grid-cols-4 mb-8 w-full">
             {home.Elements.map((element, index) => {
-              // Find the highest rating entry where the key is less than or equal to element.value
-              const ratingEntry = element.rating
-                .filter((rating) => {
-                  const key = parseInt(Object.keys(rating)[0]); // Get the percentage key as an integer
-                  return key <= element.value; // Check if the key is less than or equal to the element value
-                })
-                .pop(); // Get the last entry which will have the highest percentage
+              let description = "";
 
-              // Fallback to '0' rating if no match is found
-              const ratingDetails = ratingEntry ? ratingEntry[Object.keys(ratingEntry)[0]] : element.rating.find((rating) => Object.keys(rating)[0] === "0")[0];
+              // Determine the description based on value ranges
+              if (element.value > 80) {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("complimentary"));
+                description = ratingEntry ? ratingEntry["complimentary"].description : "No description available.";
+              } else if (element.value > 60 && element.value <= 80) {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("Moderate to complimentary"));
+                description = ratingEntry ? ratingEntry["Moderate to complimentary"].description : "No description available.";
+              } else if (element.value > 40 && element.value <= 60) {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("Moderate"));
+                description = ratingEntry ? ratingEntry["Moderate"].description : "No description available.";
+              } else if (element.value > 20 && element.value <= 40) {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("Critical to Moderate"));
+                description = ratingEntry ? ratingEntry["Critical to Moderate"].description : "No description available.";
+              } else {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("Critical"));
+                description = ratingEntry ? ratingEntry["Critical"].description : "No description available.";
+              }
 
               return (
                 <HomeElements
                   key={index}
                   name={element.name}
-                  value={element.value} // Pass the percentage value
-                  description={ratingDetails.description} // Pass the corresponding description
-                  svg={element.svg} // Pass the svg or path
-                  suffix={element.suffix} // Pass the suffix
+                  value={element.value}
+                  description={description}
+                  svg={element.svg} // If you have SVG data
+                  suffix={element.suffix}
                 />
               );
             })}
-
           </div>
 
           {/* small gap */}
@@ -123,10 +112,10 @@ const Home = () => {
           {/* second part */}
           <div className="flex flex-col md:flex-row justify-between items-center w-full my-5">
             <h2 className="text-4xl font-bold mb-1">Earth Then and Future!</h2>
-            <select className="bg-gray-700 hover:bg-purple-750 text-white font-bold py-2 px-2 rounded">
+            <select className="bg-gray-700 hover:bg-purple-750 text-white font-bold py-2 px-2 rounded" value={selectedMonth} onChange={handleChange}>
               {months.map((month, index) => (
-                <option key={index} value={month}>
-                  {month}
+                <option key={index} value={month.value}>
+                  {month.name}
                 </option>
               ))}
             </select>
@@ -137,25 +126,34 @@ const Home = () => {
 
           <div className="grid gap-3 grid-cols-1 lg:grid-cols-4 mb-8 w-full">
             {home.Elements.map((element, index) => {
-              // Find the highest rating entry where the key is less than or equal to element.value
-              const ratingEntry = element.rating
-                .filter((rating) => {
-                  const key = parseInt(Object.keys(rating)[0]); // Get the percentage key as an integer
-                  return key <= element.value; // Check if the key is less than or equal to the element value
-                })
-                .pop(); // Get the last entry which will have the highest percentage
+              let description = "";
 
-              // Fallback to '0' rating if no match is found
-              const ratingDetails = ratingEntry ? ratingEntry[Object.keys(ratingEntry)[0]] : element.rating.find((rating) => Object.keys(rating)[0] === "0")[0];
+              // Determine the description based on value ranges
+              if (element.value > 80) {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("complimentary"));
+                description = ratingEntry ? ratingEntry["complimentary"].description : "No description available.";
+              } else if (element.value > 60 && element.value <= 80) {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("Moderate to complimentary"));
+                description = ratingEntry ? ratingEntry["Moderate to complimentary"].description : "No description available.";
+              } else if (element.value > 40 && element.value <= 60) {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("Moderate"));
+                description = ratingEntry ? ratingEntry["Moderate"].description : "No description available.";
+              } else if (element.value > 20 && element.value <= 40) {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("Critical to Moderate"));
+                description = ratingEntry ? ratingEntry["Critical to Moderate"].description : "No description available.";
+              } else {
+                const ratingEntry = element.rating.find((rating) => rating.hasOwnProperty("Critical"));
+                description = ratingEntry ? ratingEntry["Critical"].description : "No description available.";
+              }
 
               return (
                 <HomeElements
                   key={index}
                   name={element.name}
-                  value={element.value} // Pass the percentage value
-                  description={ratingDetails.description} // Pass the corresponding description
-                  svg={element.svg} // Pass the svg or path
-                  suffix={element.suffix} // Pass the suffix
+                  value={element.value}
+                  description={description}
+                  svg={element.svg} // If you have SVG data
+                  suffix={element.suffix}
                 />
               );
             })}

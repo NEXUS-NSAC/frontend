@@ -5,7 +5,7 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import simData from "../data/sim.json"; // Adjust the path as needed
 import CountUp from "react-countup";
 
-export const SimElement = (props) => {
+const SimElement = (props) => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleIconClick = (index) => {
@@ -59,3 +59,6 @@ export const SimElement = (props) => {
     </div>
   );
 };
+
+
+export default SimElement;
