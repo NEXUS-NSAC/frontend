@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    port: 3000, // You can change the port if needed
+  },
   build: {
-    rollupOptions: {
-      external: ['@fortawesome/react-fontawesome', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons'],
-    },
+    outDir: 'dist', // Ensure this matches your Netlify publish directory
   },
 });
