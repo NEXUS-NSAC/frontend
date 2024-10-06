@@ -2,7 +2,7 @@
   "data": {
     "AirQualityIndex": {
       "label": "Air Quality Index",
-      "value": 0,
+      "value": 10,
       "suffix": "",
       "details": "Details about Temperature and other data"
     },

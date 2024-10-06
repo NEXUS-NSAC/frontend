@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import SimElement from "../components/SimElements";
 import SimImage from "../components/simImage";
 import simData from "../data/sim.json"; // Adjust the path as needed
@@ -28,6 +27,15 @@ const Simulator = () => {
   // const query = new URLSearchParams(useLocation().search);
 
   const value = 80;
+
+  useEffect(() => {
+    // Set all elements to the initial value when the component mounts
+    const initialElements = Object.keys(elements).reduce((acc, key) => {
+      acc[key] = value;
+      return acc;
+    }, {});
+    setElements(initialElements);
+  }, []);
 
   const getColor = (value) => {
     if (value > 75) return "#22c55e";
@@ -83,10 +91,8 @@ const Simulator = () => {
       </div>
 
       <div className="relative min-h-screen">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center my-5">
-          <button className="text-3xl text-white font-bold py-2 px-4 rounded col-span-1 md:col-span-1">
-            Simulator
-          </button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center my-5">
+          <button className="text-3xl text-white font-bold py-2 px-4 rounded col-span-1 md:col-span-1">Simulator</button>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 col-span-2 md:col-span-2">
             <div className="mb-4 md:mb-0">
               <p className="text-lg font-bold">Affected To</p>
@@ -103,17 +109,10 @@ const Simulator = () => {
                 ))}
               </select>
             </div>
-        
+
             <div className="mt-4 md:mt-0">
               <p className="text-lg font-bold">Select Month</p>
-              <input
-                type="month"
-                className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded"
-                min="2020-01"
-                max="2023-12"
-                value={selectedMonth}
-                onChange={handleMonthChange}
-              />
+              <input type="month" className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded" min="2020-01" max="2023-12" value={selectedMonth} onChange={handleMonthChange} />
             </div>
           </div>
         </div>
@@ -130,10 +129,12 @@ const Simulator = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-2 mt-20">
+        <hr className="my-10"/>
+
+        <div className="grid grid-cols-1 md:grid-cols-9 gap-2 mt-20">
           {Object.keys(elements).map((key, index) => (
             <div key={index} className="flex flex-col items-center p-2 border border-gray-700 rounded-lg">
-              <label className="text-lg font-bold mb-2 text-center break-words">{simData.data[key].label}</label>
+              <label className="text-xs font-bold mb-2 text-center break-words">{simData.data[key].label}</label>
               <div className="flex-grow"></div> {/* Spacer to push the slider to the bottom */}
               <input type="range" min="0" max="100" value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="slider-vertical" style={{ writingMode: "bt-lr", WebkitAppearance: "slider-vertical" }} />
               <span className="mt-2">{elements[key]}</span>
