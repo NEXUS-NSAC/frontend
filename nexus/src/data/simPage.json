@@ -1,12 +1,12 @@
 {
   "title": {
-    "name": "Shape Earth’s Future, See the Impact",
+    "mainTitle": "Shape Earth’s Future, See the Impact",
     "subTitle": "NEXUS 1.0 SIMULATION DASHBOARD",
     "titleContent": "The NEXUS 1.0 SIMULATION DASHBOARD is a tool that lets you explore how different environmental factors interact and affect the Earth's systems. It provides real-time data on variables like temperature, UV index, and air quality. You can also explore past data or predict future conditions based on these variables. Additionally, you can simulate how changes in one factor—like increasing temperature—might impact other areas, such as sea level or biodiversity, and see how they connect to the Earth’s spheres (geosphere, biosphere, hydrosphere, atmosphere, cryosphere)."
   },
 
-  "2ndTitle":{
-    "name": "How to Use the Simulation Dashboard",
+  "titleTwo":{
+    "mainTitle": "How to Use the Simulation Dashboard",
     "titleContent": "To use the  NEXUS 1.0 SIMULATION DASHBOARD, first select the environmental variable you’re interested in (e.g., temperature or sea level) and the time frame you want to explore. You can either view current data, look at past trends, or simulate future scenarios. For example, if you raise the temperature in your simulation, you might see the sea level rise and the UV index change, showing how interconnected the systems are. You can also learn more about each variable by diving deeper into the information provided in the dashboard. This interactive tool allows you to see how small changes in one area can impact the entire planet."
   },
 

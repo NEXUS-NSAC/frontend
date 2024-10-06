@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SimElement from "../components/SimElements";
 import SimImage from "../components/simImage";
 import simData from "../data/sim.json"; // Adjust the path as needed
+import Sim from "../data/simPage.json";
 
 const Simulator = () => {
   const [affected, setAffected] = useState("");
@@ -26,7 +27,7 @@ const Simulator = () => {
   const AffectedTo = ["Human Life", "Animal Life", "Agriculture", "Aquatic Life"];
   // const query = new URLSearchParams(useLocation().search);
 
-  const value = 80;
+  const value = 0;
 
   useEffect(() => {
     // Set all elements to the initial value when the component mounts
@@ -77,14 +78,31 @@ const Simulator = () => {
   };
 
   return (
-    <div className="relative p-8 text-center poppins-bold min-h-screen ">
-      <div>
-        <div className="text-left">
-          <h1 className="text-3xl font-bold raleway-variable">Shape Earth’s Future, See the Impact</h1>
-          <h3 className="poppins-regular">NEXUS 1.0 SIMULATION DASHBOARD</h3>
-          <p className="text-sm my-3 poppins-regular">The NEXUS 1.0 SIMULATION DASHBOARD is a tool that lets you explore how different environmental factors interact and affect the Earth's systems. It provides real-time data on variables like temperature, UV index, and air quality. You can also explore past data or predict future conditions based on these variables. Additionally, you can simulate how changes in one factor—like increasing temperature—might impact other areas, such as sea level or biodiversity, and see how they connect to the Earth’s spheres (geosphere, biosphere, hydrosphere, atmosphere, cryosphere).</p>
+    <div className="relative text-center poppins-bold min-h-screen ">
+      <div className="flex flex-col h-screen -mt-14">
+        <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-4 pb-16">
+          <div className="flex justify-center items-center text-left">
+            <div>
+              <h1 className="text-2xl poppins-bold mt-20 raleway-variable sm:text-7xl sm:text-left">{Sim.title.mainTitle}</h1>
+              <h3 className="my-4 text-2xl poppins-regular">{Sim.title.subTitle}</h3>
+            </div>
+          </div>
+          <div className="sm:flex justify-center items-center">
+            <p className="poppins-regular text-lg leading-normal  sm:text-lg sm:mt-28 sm:text-left">{Sim.title.titleContent}</p>
+          </div>
         </div>
-        <div className="text-left my-5">
+
+        <div className="flex flex-col items-center justify-center pb-4">
+          <div className="animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10l9 9 9-9" />
+            </svg>
+          </div>
+          <p className="mt-2 text-white">Scroll Down</p>
+        </div>
+      </div>
+      <div>
+        <div className="text-left my-5 ">
           <h1 className="text-3xl font-bold raleway-variable">How to Use the Simulation Dashboard</h1>
           <p className="text-sm my-3 poppins-regular">To use the NEXUS 1.0 SIMULATION DASHBOARD, first select the environmental variable you’re interested in (e.g., temperature or sea level) and the time frame you want to explore. You can either view current data, look at past trends, or simulate future scenarios. For example, if you raise the temperature in your simulation, you might see the sea level rise and the UV index change, showing how interconnected the systems are. You can also learn more about each variable by diving deeper into the information provided in the dashboard. This interactive tool allows you to see how small changes in one area can impact the entire planet.</p>
         </div>
@@ -129,15 +147,15 @@ const Simulator = () => {
           </div>
         </div>
 
-        <hr className="my-10"/>
+        <hr className="my-10" />
 
-        <div className="grid grid-cols-1 md:grid-cols-9 gap-2 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-9 gap-2 my-20">
           {Object.keys(elements).map((key, index) => (
             <div key={index} className="flex flex-col items-center p-2 border border-gray-700 rounded-lg">
               <label className="text-xs font-bold mb-2 text-center break-words">{simData.data[key].label}</label>
               <div className="flex-grow"></div> {/* Spacer to push the slider to the bottom */}
-              <input type="range" min="0" max="100" value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="slider-vertical" style={{ writingMode: "bt-lr", WebkitAppearance: "slider-vertical" }} />
-              <span className="mt-2">{elements[key]}</span>
+              <input type="range" min="0" max="5" value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="slider-vertical" style={{ writingMode: "bt-lr", WebkitAppearance: "slider-vertical" }} />
+              <input type="number" min="0" max="5" value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="mt-2 w-12 text-center bg-gray-700 text-white rounded" />
             </div>
           ))}
         </div>
