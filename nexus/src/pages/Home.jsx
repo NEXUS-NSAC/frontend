@@ -46,7 +46,7 @@ const Home = () => {
             <h1 className="text-2xl poppins-bold mt-20 raleway-variable sm:text-7xl sm:text-left">{home.mainTitle}</h1>
           </div>
           <div className="sm:flex justify-center items-center">
-            <p className="poppins-regular text-lg leading-normal sm:text-lg sm:mt-28 sm:text-left">{home.titleContent}</p>
+            <p className="poppins-regular text-lg leading-normal  sm:text-lg sm:mt-28 sm:text-left">{home.titleContent}</p>
           </div>
         </div>
 

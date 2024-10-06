@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
@@ -16,25 +16,15 @@ const Navbar = () => {
         <div className="text-white">
           <ul className="">
             <li>
-              <NavLink
-                to="/"
-                exact
-                className={`custom-underline ${currentPath === '/' ? 'active-underline' : ''}`}
-              >
+              <NavLink to="/" exact className={`custom-underline ${currentPath === "/" ? "active-underline" : ""}`}>
                 Home
               </NavLink>
-              <NavLink
-                to="/simulator"
-                className={`custom-underline ml-4 ${currentPath === '/simulator' ? 'active-underline' : ''}`}
-              >
+              <NavLink to="/simulator" className={`custom-underline ml-4 ${currentPath === "/simulator" ? "active-underline" : ""}`}>
                 Simulate
               </NavLink>
-              <NavLink
-                to="/wiki"
-                className={`custom-underline ml-4 ${currentPath === '/wiki' ? 'active-underline' : ''}`}
-              >
+              <a href="https://github.com/NEXUS-NSAC/frontend/wiki" className="custom-underline ml-4" target="_blank" rel="noopener noreferrer">
                 Wiki
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>

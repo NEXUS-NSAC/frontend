@@ -83,13 +83,15 @@ const Simulator = () => {
       </div>
 
       <div className="relative min-h-screen">
-        <div className="flex flex-row justify-between items-center">
-          <button className="text-3xl text-white font-bold py-2 px-4 rounded">Simulator</button>
-          <div className="flex flex-col md:flex-row gap-3 items-center my-5">
-            <div className="mb-4 md:mb-0 md:ml-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center my-5">
+          <button className="text-3xl text-white font-bold py-2 px-4 rounded col-span-1 md:col-span-1">
+            Simulator
+          </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 col-span-2 md:col-span-2">
+            <div className="mb-4 md:mb-0">
               <p className="text-lg font-bold">Affected To</p>
               <select
-                className="bg-gray-700 hover:bg-gray-750 text-white min-w-12 font-bold py-2 px-2 rounded"
+                className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded"
                 value={affected} // Control the value of the select
                 onChange={handleChange} // Set the onChange handler
               >
@@ -101,10 +103,17 @@ const Simulator = () => {
                 ))}
               </select>
             </div>
-
+        
             <div className="mt-4 md:mt-0">
               <p className="text-lg font-bold">Select Month</p>
-              <input type="month" className="bg-gray-700 hover:bg-gray-750 text-white font-bold py-2 px-2 rounded" min="2020-01" max="2023-12" value={selectedMonth} onChange={handleMonthChange} />
+              <input
+                type="month"
+                className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded"
+                min="2020-01"
+                max="2023-12"
+                value={selectedMonth}
+                onChange={handleMonthChange}
+              />
             </div>
           </div>
         </div>
