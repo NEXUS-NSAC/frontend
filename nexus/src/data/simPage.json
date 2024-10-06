@@ -8,5 +8,7 @@
   "2ndTitle":{
     "name": "How to Use the Simulation Dashboard",
     "titleContent": "To use the  NEXUS 1.0 SIMULATION DASHBOARD, first select the environmental variable you’re interested in (e.g., temperature or sea level) and the time frame you want to explore. You can either view current data, look at past trends, or simulate future scenarios. For example, if you raise the temperature in your simulation, you might see the sea level rise and the UV index change, showing how interconnected the systems are. You can also learn more about each variable by diving deeper into the information provided in the dashboard. This interactive tool allows you to see how small changes in one area can impact the entire planet."
-  }
+  },
+
+  "affected": ""
 }

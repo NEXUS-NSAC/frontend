@@ -4,48 +4,52 @@
     "subTitle": "Through interactive simulations and visualizations, users can see how changes in one system such as an increase in global temperatures ripple through other systems, leading to effects like sea-level rise or changes in biodiversity. NEXUS 1.0 empowers users to visualize Earth’s delicate balance and explore how human actions shape the future of the planet.",
     "Elements":[
         {
-            "name": "People",
+            "name": "Human Life",
+            "value": 75,
+            "suffix": "%",
             "rating": [
-                {"100%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi? ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }},
-                {"75%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi? ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"50%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"25%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"0%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }}
-            ],
-            "svg": "../assets/svgs/atmosphere"
+                {"100":{"description": "The environmental conditions are currently favorable for human populations. all key criteria are within manageable levels, supporting better health and living conditions. Continued efforts to maintain or improve these conditions are essential to sustain this positive impact." }},
+                {"80":{ "description": "The environmental impact on humans is leaning toward positive, with conditions generally supporting health and well-being. However, there are still areas that could improve. By continuing to reduce carbon emissions and manage temperature levels, this trend could be further enhanced"}},
+                {"60":{ "description": "The impact on humans is relatively balanced at the moment. Environmental conditions are neither highly detrimental nor particularly beneficial, though they could tip in either direction. Continued monitoring is important to maintain this balance and prevent any negative trends."}},
+                {"40":{ "description": "The impact on humans is concerning, with noticeable changes in health and living conditions due to environmental factors. The damage may not be critical yet, but the situation is deteriorating. Precautionary steps should be taken to avoid more severe consequences."}},
+                {"20":{ "description": "The current conditions are having a significant negative impact on humans. The changes are posing serious risks to human health and living conditions. Immediate action is required to reduce these harmful effects and prevent further damage." }}
+            ]
         },
         {
-            "name": "Biosphere",
+            "name": "Animal Life",
+            "value": 65,
+            "suffix": "%",
             "rating": [
-                {"100%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }},
-                {"75%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"50%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"25%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"0%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }}
-            ],
-            "svg": "../assets/svgs/biosphere"
+                {"75":{ "description": "The current state of the environment is providing a supportive habitat for animal populations. Balanced environmental conditions are fostering healthy ecosystems where wildlife can thrive. Maintaining this balance is key to preserving biodiversity and ensuring the well-being of animal species." }},
+                {"65":{ "description": "Animal populations are benefiting moderately from current environmental conditions. Ecosystems are relatively healthy, but there is room for improvement to ensure the long-term well-being of wildlife. Strengthening conservation efforts now can reinforce this positive trend"}},
+                {"55":{ "description": "The environment is currently maintaining a neutral effect on wildlife. While some species may be adapting, others are facing growing challenges. This balance could shift, and proactive steps should be taken to ensure ecosystems remain stable for animal populations."}},
+                {"45":{ "description": "Wildlife is beginning to experience notable disruptions. While the ecosystems are still functioning, the increase in criteria is putting pressure on animal habitats. Early intervention can help mitigate these effects and prevent larger disruptions in biodiversity"}},
+                {"0":{ "description": "The environmental conditions are severely affecting animal populations. The changes are disrupting ecosystems, leading to habitat loss and potential species endangerment. Prompt intervention is necessary to preserve biodiversity and ensure species survival." }}
+            ]
         },
         {
-            "name" : "Agri",
+            "name" : "Agriculture",
+            "value": 55,
+            "suffix": "%",
             "rating": [
-                {"100%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }},
-                {"75%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"50%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"25%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"0%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }}
-            ],
-            "svg": "../assets/svgs/Agri"
+                {"75":{ "description": "The conditions for forests and plant life are highly favorable. The current environmental balance is promoting healthy growth and reducing stress on ecosystems. Continued efforts in conservation and carbon management will help sustain these positive outcomes for forests worldwide."}},
+                {"65":{ "description": "Forests and plant life are experiencing moderately favorable conditions. Growth is sustainable, but there are opportunities to further improve the environment for forests. Continued action to lower carbon emissions and protect ecosystems will yield better results for forest health."}},
+                {"55":{ "description": "The impact on forests and plant life is at a steady point. Current conditions are not causing significant harm, but they are not promoting growth either. Keeping an eye on environmental factors will be important to sustain this equilibrium and promote healthier ecosystems."}},
+                {"45":{ "description": "Forests and plant life are experiencing moderate stress. Changes are starting to slow down growth and strain ecosystems. Immediate attention is needed to ensure these changes do not escalate, further affecting forest ecosystems."}},
+                {"0":{ "description": "The impact on forests and plant life is alarming. The elevated changes are affecting tree growth, increasing deforestation, and damaging ecosystems. It is critical to implement measures that can curb these changes and protect the world's forests." }}
+            ]
         },
         {
-            "name": "Sea Life",
+            "name": "Aquatic Life",
+            "value": 100,
+            "suffix": "%",
             "rating": [
-                {"100%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }},
-                {"75%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"50%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"25%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
-                {"0%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }}
-            ],
-            "svg": "../assets/svgs/SeaLife"
+                {"75":{ "description": "Marine ecosystems are currently benefiting from favorable environmental conditions. The Conditions are supporting healthy marine life, including coral reefs and fish populations. It’s crucial to keep these conditions stable to ensure the long-term well-being of marine species and the preservation of ocean biodiversity." }},
+                {"65":{ "description": "Marine life is benefiting from reasonably stable conditions, with sea surface temperatures and ocean chemistry supporting species to a degree. However, continued efforts are necessary to ensure this positive trend strengthens and provides lasting support for marine ecosystems."}},
+                {"55":{ "description": "Marine ecosystems are in a stable condition, though vulnerable to shifts. While the sea surface temperatures and other factors are not causing immediate distress, the conditions could change rapidly. Active measures should be considered to maintain stability for marine species."}},
+                {"45":{ "description": "Marine life is facing emerging challenges due to changes. While ecosystems are still relatively stable, the conditions are becoming less favorable for many species. Taking preventive action now will help protect marine biodiversity from further harm."}},
+                {"0":{ "description": "Marine life is facing a substantial threat from the current environmental conditions.  changing ocean chemistry are disrupting marine ecosystems, leading to coral bleaching, species displacement, and habitat destruction. Swift action is vital to protect marine biodiversity and restore balance to the oceans."}}
+            ]
         }
     ]
 

@@ -1,26 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { SimElement } from "../components/SimElements";
 
-
-const AffectedTo = ["Temperature", "UV Index", "Sea Level", "Air Quality"];
+import People from "../assets/svg/People";
+import BiosphereSvg from "../assets/svg/Biosphere";
+import AgriSvg from "../assets/svg/Agri";
+import SeaLifeSvg from "../assets/svg/SeaLife";
 
 const Simulator = () => {
+  const [affected, setAffected] = useState("");
+  const AffectedTo = ["People", "Biosphere", "Agriculture", "Sea Life"];
   const query = new URLSearchParams(useLocation().search);
-  const temperature = query.get("temperature");
-  const uvIndex = query.get("uvIndex");
-  const seaLevel = query.get("seaLevel");
-  const airQuality = query.get("airQuality");
+  const color = "#22c55e";
+
+  const handleChange = (event) => {
+    setAffected(event.target.value); // Update the state with the selected value
+  };
 
   return (
     <div className="relative p-8 text-center poppins-bold min-h-screen ">
+      <div>
+        <div className="flex justify-between items-center">
+          <h1 className="text-3xl font-bold raleway-variable">Dashboard</h1>
+
+        </div>
+      </div>
       <h1 className="text-5xl font-bold -mb-1 raleway-variable">Welcome to Simulator Dashboard</h1>
 
       <div className="relative min-h-screen">
         <div className="flex flex-col md:flex-row gap-3 items-center my-10">
           <div className="mb-4 md:mb-0 md:ml-4">
             <p className="text-lg font-bold">Affected To</p>
-            <select className="bg-gray-700 hover:bg-gray-750 text-white font-bold py-2 px-2 rounded">
+            <select
+              className="bg-gray-700 hover:bg-gray-750 text-white min-w-12 font-bold py-2 px-2 rounded"
+              value={affected} // Control the value of the select
+              onChange={handleChange} // Set the onChange handler
+            >
+              <option value="">Select Option</option>
               {AffectedTo.map((item, index) => (
                 <option key={index} value={item}>
                   {item}
@@ -38,8 +54,11 @@ const Simulator = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           <div className="sm:col-span-1">
             <div className="bg-gray-800 p-4 rounded-lg">
-              <img src="/assets/tree.jpeg" alt="Description" className="w-full h-auto" />
-              <p className="mt-2 text-lg font-bold">75%</p>
+              {/* {affected === "People" && <People className="w-20 h-20" style={{ color: color, width: '100%', height: '90%'  , fill:color }}/> <CountUp className="text-7xl" start={props.value / 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} />}
+              {affected === "Biosphere" && <BiosphereSvg className="w-20 h-20" style={{ color: color, width: '100%', height: '90%'  , fill:color }} />}
+              {affected === "Agriculture" && <AgriSvg className="w-20 h-20" style={{ color: color, width: '100%', height: '90%'  , fill:color }} />}
+              {affected === "Sea Life" && <SeaLifeSvg className="w-20 h-20" style={{ color: color, width: '100%', height: '90%'  , fill:color }} />} */}
+
             </div>
           </div>
 
