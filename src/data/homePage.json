@@ -5,7 +5,7 @@
     "Elements":[
         {
             "name": "Human Life",
-            "value": 75,
+            "value":88,
             "suffix": "%",
             "rating": [
                 {"complimentary":{"description": "The environmental conditions are currently favorable for human populations. all key criteria are within manageable levels, supporting better health and living conditions. Continued efforts to maintain or improve these conditions are essential to sustain this positive impact." }},
@@ -17,7 +17,7 @@
         },
         {
             "name": "Animal Life",
-            "value":20,
+            "value":39,
             "suffix": "%",
             "rating": [
                 {"complimentary":{ "description": "The current state of the environment is providing a supportive habitat for animal populations. Balanced environmental conditions are fostering healthy ecosystems where wildlife can thrive. Maintaining this balance is key to preserving biodiversity and ensuring the well-being of animal species." }},
@@ -29,7 +29,7 @@
         },
         {
             "name" : "Agriculture",
-            "value": 55,
+            "value": 74,
             "suffix": "%",
             "rating": [
                 {"complimentary":{ "description": "The conditions for forests and plant life are highly favorable. The current environmental balance is promoting healthy growth and reducing stress on ecosystems. Continued efforts in conservation and carbon management will help sustain these positive outcomes for forests worldwide."}},
@@ -41,7 +41,7 @@
         },
         {
             "name": "Aquatic Life",
-            "value": 100,
+            "value": 66,
             "suffix": "%",
             "rating": [
                 {"complimentary":{ "description": "Marine ecosystems are currently benefiting from favorable environmental conditions. The Conditions are supporting healthy marine life, including coral reefs and fish populations. It’s crucial to keep these conditions stable to ensure the long-term well-being of marine species and the preservation of ocean biodiversity." }},
