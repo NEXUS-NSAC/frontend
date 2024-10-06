@@ -1,5 +1,52 @@
 {
     "mainTitle": "Explore Our Planet’s Story",
     "titleContent": "NEXUS 1.0 is an interactive platform designed to help users explore and understand the complex interconnections between Earth's vital systems. By drawing from satellite data and global datasets, NEXUS 1.0 provides near real-time insights into how environmental factors like atmospheric temperature, carbon emissions, and water quality impact Earth’s five spheres: the geosphere, biosphere, hydrosphere, atmosphere, and cryosphere. Through interactive simulations and visualizations, users can see how changes in one system—such as an increase in global temperatures—ripple through other systems, leading to effects like sea-level rise or changes in biodiversity. NEXUS 1.0 empowers users to visualize Earth’s delicate balance and explore how human actions shape the future of the planet.",
-    "subTitle": "Through interactive simulations and visualizations, users can see how changes in one system such as an increase in global temperatures ripple through other systems, leading to effects like sea-level rise or changes in biodiversity. NEXUS 1.0 empowers users to visualize Earth’s delicate balance and explore how human actions shape the future of the planet."
+    "subTitle": "Through interactive simulations and visualizations, users can see how changes in one system such as an increase in global temperatures ripple through other systems, leading to effects like sea-level rise or changes in biodiversity. NEXUS 1.0 empowers users to visualize Earth’s delicate balance and explore how human actions shape the future of the planet.",
+    "Elements":[
+        {
+            "name": "People",
+            "rating": [
+                {"100%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi? ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }},
+                {"75%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi? ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"50%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"25%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"0%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }}
+            ],
+            "svg": "../assets/svgs/atmosphere"
+        },
+        {
+            "name": "Biosphere",
+            "rating": [
+                {"100%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }},
+                {"75%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"50%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"25%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"0%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }}
+            ],
+            "svg": "../assets/svgs/biosphere"
+        },
+        {
+            "name" : "Agri",
+            "rating": [
+                {"100%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }},
+                {"75%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"50%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"25%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"0%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }}
+            ],
+            "svg": "../assets/svgs/Agri"
+        },
+        {
+            "name": "Sea Life",
+            "rating": [
+                {"100%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }},
+                {"75%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"50%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"25%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?"}},
+                {"0%":{"color": "#FFD700", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam sit incidunt nostrum ipsum tempore eos architecto, aspernatur quidem soluta, quas unde repudiandae minima ex dolore laborum repellendus ipsam commodi?" }}
+            ],
+            "svg": "../assets/svgs/SeaLife"
+        }
+    ]
+
 }

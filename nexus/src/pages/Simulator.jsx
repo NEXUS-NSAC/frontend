@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { SimElement } from "../components/SimElements";
 
+
 const AffectedTo = ["Temperature", "UV Index", "Sea Level", "Air Quality"];
 
 const Simulator = () => {
