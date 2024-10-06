@@ -2,10 +2,10 @@
   "data": {
     "AirQualityIndex": {
       "label": "Air Quality Index",
-      "value": 5,
+      "value": 0,
       "suffix": "",
       "range":5,
-      "details": "Details about Temperature and other data"
+      "details": "The Air Quality Index (AQI) is a standardized system used to measure and communicate the quality of the air in a specific location. It provides a numerical value that corresponds to the concentration of pollutants, such as ground-level ozone, particulate matter (PM2.5 and PM10), carbon monoxide (CO), sulfur dioxide (SO2), and nitrogen dioxide (NO2). The AQI scale typically ranges from 0 to 500, where lower values indicate better air quality, while higher values signify harmful levels of pollution that can pose health risks. Different categories, such as \"Good,\" \"Moderate,\" and \"Hazardous\", help the public understand the severity of air pollution. AQI plays a crucial role in environmental health, guiding individuals and policymakers in making informed decisions to protect human health and the environment."
     },
     "GlacierMassBalance": {
       "label": "Glacier Mass Balance",

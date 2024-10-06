@@ -4,25 +4,12 @@ import home from "../data/homePage.json";
 
 const Home = () => {
   const [selectedMonth, setSelectedMonth] = useState("");
-  const [elements, setElements] = useState([]);
-  const months = [
-    { name: "January", value: "2023-01" },
-    { name: "February", value: "2023-02" },
-    { name: "March", value: "2023-03" },
-    { name: "April", value: "2023-04" },
-    { name: "May", value: "2023-05" },
-    { name: "June", value: "2023-06" },
-    { name: "July", value: "2023-07" },
-    { name: "August", value: "2023-08" },
-    { name: "September", value: "2023-09" },
-    { name: "October", value: "2023-10" },
-    { name: "November", value: "2023-11" },
-    { name: "December", value: "2023-12" },
-  ];
 
-  const handleChange = (event) => {
+  const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
   };
+
+  // console.log(selectedMonth);
 
   // useEffect(() => {
   //   if (selectedMonth) {
@@ -66,7 +53,7 @@ const Home = () => {
         <div className="relative w-full h-full flex flex-col items-center justify-center text-white p-4">
           <div className="flex flex-col md:flex-row justify-between items-center w-full my-1">
             <h2 className="text-4xl font-bold mb-2 md:mb-0">Earth Right Now!</h2>
-            <h2 className="bg-gray-700 hover:bg-purple-750 text-white font-bold py-2 px-4 rounded">OCT 2022</h2>
+            <h2 className="bg-gray-700 hover:bg-purple-750 text-white font-bold py-2 px-4 rounded">June 2024</h2>
           </div>
           {/* small gap */}
           <div className="flex justify-between items-center h-10 w-full"></div>
@@ -112,13 +99,7 @@ const Home = () => {
           {/* second part */}
           <div className="flex flex-col md:flex-row justify-between items-center w-full my-5">
             <h2 className="text-4xl font-bold mb-1">Earth Then and Future!</h2>
-            <select className="bg-gray-700 hover:bg-purple-750 text-white font-bold py-2 px-2 rounded" value={selectedMonth} onChange={handleChange}>
-              {months.map((month, index) => (
-                <option key={index} value={month.value}>
-                  {month.name}
-                </option>
-              ))}
-            </select>
+            <input type="month" className="bg-gray-700 hover:bg-purple-750 text-white font-bold py-2 px-4 rounded" min="2000-01" max="2090-12" value={selectedMonth} onChange={handleMonthChange} />
           </div>
 
           {/* small gap */}
@@ -152,8 +133,9 @@ const Home = () => {
                   name={element.name}
                   value={element.value}
                   description={description}
-                  svg={element.svg} // If you have SVG data
+                  svg={element.svg} 
                   suffix={element.suffix}
+                  month={selectedMonth}
                 />
               );
             })}
