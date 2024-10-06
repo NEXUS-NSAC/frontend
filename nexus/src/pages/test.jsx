@@ -3,9 +3,14 @@ import Tree from '../assets/svg/Agri';
 
 function Test() {
   return (
-    <div>
-      <h1>Test</h1>
-      <Tree style={{ color: 'red', width: '100px', height: '100px'  , fill:"red" }} /> {/* Example of changing color and size */}
+    <div className="wiki-container">
+      <iframe
+        src="https://github.com/NEXUS-NSAC/frontend/wiki"
+        title="NEXUS Wiki"
+        width="100%"
+        height="1000px"
+        style={{ border: 'none' }}
+      ></iframe>
     </div>
   );
 }
