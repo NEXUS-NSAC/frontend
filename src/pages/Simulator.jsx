@@ -119,7 +119,7 @@ const Simulator = () => {
       </div>
 
       <div className="relative min-h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center mt-20 my-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center mt-28 my-5">
           <button className="text-3xl text-white font-bold py-2 px-4 rounded col-span-1 md:col-span-1">Simulator</button>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 col-span-2 md:col-span-2">
             <div className="mb-4 md:mb-0">
