@@ -57,49 +57,22 @@ const Simulator = () => {
     setSelectedMonth(month);
 
     if (month) {
-      // Construct the request body
-      const requestBody = {
-        extremeHeat: 3,
-        tropicalCyclones: 4,
-        earthquakesAndVolcanoes: 2,
-        floods: 0,
-        landslides: 0,
-        globalPrimaryEnergyConsumption: 7,
-        airQuality: 6,
-        glacierMassBalance: -3,
-        precipitation: 8,
-        greenhouseGases: 9,
-        atmosphericTemperature: 7.0,
-        solarRadiationAbsorption: 5,
-        erosionRates: 4,
-        snowCoverDuration: 2,
-        seaSurfaceTemperature: 7.0,
-        waterQualityIndicators: 3,
-        forestCover: 6,
-        soilCompositionAndQuality: 5,
-        animalImpact: 0,
-        humanImpact: 0,
-        treeImpact: 0,
-        aquaticImpact: 0,
-        disasters: 3,
-      };
-
       // Make a backend request to fetch data for the selected month
-      fetch(`https://backend-swft.onrender.com/generate/${month}`, {
+      fetch('http://127.0.0.1:8000/generate/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(requestBody),
+        body: JSON.stringify({ month }),
       })
         .then((response) => response.json())
         .then((data) => {
           console.log('Data fetched:', data);
           // Merge the received data with the existing state
-          // setElements((prevElements) => ({
-          //   ...prevElements,
-          //   ...data,
-          // }));
+          setElements((prevElements) => ({
+            ...prevElements,
+            ...data,
+          }));
         })
         .catch((error) => {
           console.error('Error fetching data:', error);
@@ -166,7 +139,7 @@ const Simulator = () => {
             </div>
 
             <div className="mt-4 md:mt-0">
-              <p className="text-lg font-bold">Select Month and Year</p>
+              <p className="text-lg font-bold">Select Month</p>
               <input type="month" className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded" min="2020-01" max="2023-12" value={selectedMonth} onChange={handleMonthChange} />
             </div>
           </div>
