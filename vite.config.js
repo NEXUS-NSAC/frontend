@@ -1,12 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import viteTsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [react()],
+  base: '',
+  plugins: [react(), viteTsconfigPaths()],
   server: {
-    port: 3000, // You can change the port if needed
-  },
-  build: {
-    outDir: 'dist', // Ensure this matches your Netlify publish directory
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'https://backend-swft.onrender.com', // Correct backend URL
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+    port: 3000,
   },
 });
