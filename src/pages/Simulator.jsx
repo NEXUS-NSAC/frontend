@@ -199,7 +199,7 @@ const Simulator = () => {
     };
 
     const url = `https://connectedworld.earth/generate/${selectedMonth}`;
-    console.log("url");
+    console.log("url2");
 
     try {
       const response = await fetch(url, {
