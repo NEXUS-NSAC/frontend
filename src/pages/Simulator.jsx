@@ -199,7 +199,7 @@ const Simulator = () => {
     };
 
     const url = `/api/generate/${selectedMonth}`;
-    console.log(url);
+    console.log("url");
 
     try {
       const response = await fetch(url, {
