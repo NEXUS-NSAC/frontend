@@ -39,7 +39,12 @@ const SimElement = (props) => {
             </div>
             <p className="text-lg font-bold">{item.label}</p>
             <p className="mt-2 text-lg font-bold">
-              <CountUp start={props[key] ? props[key] / 2 : item.value / 2} end={props[key] ? props[key] : item.value} duration={Math.random() * 10} suffix={item.suffix} />
+              <CountUp
+                start={props[key] !== undefined ? props[key] / 2 : 0}
+                end={props[key] !== undefined ? props[key] : 0}
+                duration={Math.random() * 10}
+                suffix={item.suffix}
+              />
             </p>
           </motion.div>
           {selectedItem === index && (
@@ -49,7 +54,7 @@ const SimElement = (props) => {
               ))}
               <motion.div initial="hidden" animate="visible" exit="exit" variants={slideVariants} transition={{ duration: 0.1 }} className="col-span-4 bg-gray-900 p-4 rounded-lg">
                 <p className="text-lg font-bold mb-3">{item.label} Details</p>
-                <p className="text-sm">{item.details}</p>
+                <p className="text-sm">{item.details || "N/A"}</p>
                 <button className="mt-4 bg-gray-700 text-white py-0.5 px-2 rounded" onClick={() => setSelectedItem(null)}>
                   Close
                 </button>
