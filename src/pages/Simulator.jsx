@@ -199,8 +199,8 @@ const Simulator = () => {
                 {SimData.data[key] ? SimData.data[key].label : "Unknown"}
               </label>
               <div className="flex-grow"></div> {/* Spacer to push the slider to the bottom */}
-              <input type="range" min="0" max="5" value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="slider-vertical" style={{ writingMode: "bt-lr", WebkitAppearance: "slider-vertical" }} />
-              <input type="number" min="0" max="5" value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="mt-2 w-12 text-center bg-gray-700 text-white rounded" />
+              <input type="range" min="0" max={SimData.data[key] ? SimData.data[key].range : 5} value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="slider-vertical" style={{ writingMode: "bt-lr", WebkitAppearance: "slider-vertical" }} />
+              <input type="number" min="0" max={SimData.data[key] ? SimData.data[key].range : 5} value={elements[key]} onChange={(event) => handleSliderChange(event, key)} className="mt-2 w-12 text-center bg-gray-700 text-white rounded" />
             </div>
           ))}
         </div>
