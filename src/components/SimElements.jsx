@@ -17,6 +17,12 @@ const SimElement = ({ label, value, suffix, details }) => {
     exit: { opacity: 0, y: -50 },
   };
 
+  const ignore = ["animalImpact", "humanImpact", "treeImpact", "aquaticImpact"];
+
+  if (ignore.includes(label)) {
+    return null;
+  }
+
   return (
     <div className="bg-gray-800 p-4 rounded-lg relative">
       <div className="absolute top-2 right-2">

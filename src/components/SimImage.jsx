@@ -14,25 +14,25 @@ const SimImage = (props) => {
       {affected === "Human Life" && (
         <>
           <People className="w-20 h-20" style={{ color: props.color, width: "100%", height: "90%", fill: props.color }} />
-          <CountUp className="text-7xl" start={props.value / 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} style={{ color: props.color }} />
+          <CountUp className="text-7xl" start={props.humanImpact / 2} end={props.humanImpact} duration={Math.random() * 10} suffix={props.suffix} style={{ color: props.color }} />
         </>
       )}
       {affected === "Animal Life" && (
         <>
           <BiosphereSvg className="w-20 h-20" style={{ color: props.color, width: "100%", height: "90%", fill: props.color }} />
-          <CountUp className="text-7xl" start={props.value / 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} style={{ color: props.color }} />
+          <CountUp className="text-7xl" start={props.animalImpact / 2} end={props.animalImpact} duration={Math.random() * 10} suffix={props.suffix} style={{ color: props.color }} />
         </>
       )}
       {affected === "Agriculture" && (
         <>
           <AgriSvg className="w-20 h-20" style={{ color: props.color, width: "100%", height: "90%", fill: props.color }} />
-          <CountUp className="text-7xl" start={props.value / 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} style={{ color: props.color }} />
+          <CountUp className="text-7xl" start={props.treeImpact / 2} end={props.treeImpact} duration={Math.random() * 10} suffix={props.suffix} style={{ color: props.color }} />
         </>
       )}
       {affected === "Aquatic Life" && (
         <>
           <SeaLifeSvg className="w-20 h-20" style={{ color: props.color, width: "100%", height: "90%", fill: props.color }} />
-          <CountUp className="text-7xl" start={props.value / 2} end={props.value} duration={Math.random() * 10} suffix={props.suffix} style={{ color: props.color }} />
+          <CountUp className="text-7xl" start={props.aquaticImpact / 2} end={props.aquaticImpact} duration={Math.random() * 10} suffix={props.suffix} style={{ color: props.color }} />
         </>
       )}
       {!["Human Life", "Animal Life", "Agriculture", "Aquatic Life"].includes(affected) && (
