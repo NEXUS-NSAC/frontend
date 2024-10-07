@@ -198,7 +198,7 @@ const Simulator = () => {
       soilCompositionAndQuality: elements.soilCompositionAndQuality.value,
     };
 
-    const url = `https://connectedworld.earth/generate/${selectedMonth}`;
+    const url = `/api/generate${selectedMonth}`;
     console.log("url2");
 
     try {
