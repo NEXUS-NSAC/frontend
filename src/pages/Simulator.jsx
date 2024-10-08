@@ -123,7 +123,7 @@ const Simulator = () => {
       range: 100,
       details: "Energy waste refers to the unnecessary consumption of energy that occurs when energy is not used efficiently or effectively, leading to excess energy use and higher costs. This waste can arise from outdated technologies, inefficient appliances, poor insulation in buildings, and unnecessary energy consumption in industrial processes. In contrast, **sustainable energy** encompasses energy sources and practices that meet present energy needs without compromising the ability of future generations to meet their own needs. This includes renewable energy sources like solar, wind, hydroelectric, and geothermal, which have a lower environmental impact and contribute to reducing greenhouse gas emissions. Transitioning from energy waste to sustainable energy practices is crucial for combating climate change, promoting environmental health, and ensuring energy security for the future.",
     },
-    
+
     
   });
 
@@ -204,7 +204,7 @@ const Simulator = () => {
     }
 
     const url = `/api/generate/${selectedMonth}`;
-    console.log("url3");
+    console.log("url4");
 
     setError("loading");
     try {
