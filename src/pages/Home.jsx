@@ -10,6 +10,9 @@ const Home = () => {
     window.location.href = "https://frontend-two-steel-50.vercel.app/";
   }, []);
 
+
+  console.log("redirecting to the new site");
+  
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
   };
