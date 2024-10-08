@@ -203,8 +203,8 @@ const Simulator = () => {
       soilCompositionAndQuality: 5
     }
 
-    const url = `/api/generate/${selectedMonth}`;
-    console.log("url5");
+    const url = `/generate/${selectedMonth}`;
+    console.log("url6");
 
     setError("loading");
     try {
