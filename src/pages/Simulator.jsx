@@ -6,6 +6,7 @@ import Sim from "../data/simPage.json";
 const Simulator = () => {
   const [affected, setAffected] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("");
+  const [error, setError] = useState("")
   const [elements, setElements] = useState({
     airQuality: { label: "Air Quality Index", value: 59, suffix: "", range: 100, details: "..." },
     glacierMassBalance: { label: "Glacier Mass Balance", value: 44, suffix: "", range: 100, details: "..." },
@@ -16,6 +17,7 @@ const Simulator = () => {
       range: 100,
       details: "Precipitation refers to any form of water, liquid or solid, that falls from the atmosphere to the Earth's surface. This includes rain, snow, sleet, and hail. It plays a crucial role in the Earth's water cycle, replenishing freshwater supplies and supporting ecosystems, agriculture, and human needs. The amount and frequency of precipitation vary across regions and are influenced by factors such as geography, atmospheric conditions, and climate patterns. Understanding precipitation trends is vital for managing water resources, predicting weather patterns, and assessing the impacts of climate change on droughts and floods.",
     },
+
     greenhouseGases: {
       label: "Greenhouse Gases (CO2, CO, CH4)",
       value: 80,
@@ -121,6 +123,8 @@ const Simulator = () => {
       range: 100,
       details: "Energy waste refers to the unnecessary consumption of energy that occurs when energy is not used efficiently or effectively, leading to excess energy use and higher costs. This waste can arise from outdated technologies, inefficient appliances, poor insulation in buildings, and unnecessary energy consumption in industrial processes. In contrast, **sustainable energy** encompasses energy sources and practices that meet present energy needs without compromising the ability of future generations to meet their own needs. This includes renewable energy sources like solar, wind, hydroelectric, and geothermal, which have a lower environmental impact and contribute to reducing greenhouse gas emissions. Transitioning from energy waste to sustainable energy practices is crucial for combating climate change, promoting environmental health, and ensuring energy security for the future.",
     },
+    
+    
   });
 
   const AffectedTo = ["Human Life", "Animal Life", "Agriculture", "Aquatic Life"];
@@ -154,6 +158,7 @@ const Simulator = () => {
   };
 
   const fetchSimulationData = async () => {
+
     const cachedData = localStorage.getItem(`simulationData_${selectedMonth}`);
     if (cachedData) {
       const data = JSON.parse(cachedData);
@@ -178,29 +183,30 @@ const Simulator = () => {
     }
 
     const requestBody = {
-      extremeHeat: elements.atmosphericTemperature.value,
-      tropicalCyclones: elements.disasters.value,
-      earthquakesAndVolcanoes: elements.disasters.value,
-      floods: elements.precipitation.value,
-      landslides: elements.erosionRates.value,
-      globalPrimaryEnergyConsumption: elements.energyWasteAndSustainableEnergy.value,
-      airQuality: elements.airQuality.value,
-      glacierMassBalance: elements.glacierMassBalance.value,
-      precipitation: elements.precipitation.value,
-      greenhouseGases: elements.greenhouseGases.value,
-      atmosphericTemperature: elements.atmosphericTemperature.value,
-      solarRadiationAbsorption: elements.solarRadiationAbsorption.value,
-      erosionRates: elements.erosionRates.value,
-      snowCoverDuration: elements.snowCoverDuration.value,
-      seaSurfaceTemperature: elements.seaTemperatureSST.value,
-      waterQualityIndicators: elements.waterQualityIndicators.value,
-      forestCover: elements.forestCover.value,
-      soilCompositionAndQuality: elements.soilCompositionAndQuality.value,
-    };
+      extremeHeat: 3,
+      tropicalCyclones: 4,
+      earthquakesAndVolcanoes: 2,
+      floods: 5,
+      landslides: 1,
+      globalPrimaryEnergyConsumption: 7,
+      airQuality: 6,
+      glacierMassBalance: -3,
+      precipitation: 8,
+      greenhouseGases: 9,
+      atmosphericTemperature: 7,
+      solarRadiationAbsorption: 5,
+      erosionRates: 4,
+      snowCoverDuration: 2,
+      seaSurfaceTemperature: 7,
+      waterQualityIndicators: 3,
+      forestCover: 6,
+      soilCompositionAndQuality: 5
+    }
 
-    const url = `/api/generate${selectedMonth}`;
-    console.log("url2");
+    const url = `/api/generate/${selectedMonth}`;
+    console.log("url3");
 
+    setError("loading");
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -209,12 +215,13 @@ const Simulator = () => {
         },
         body: JSON.stringify(requestBody),
       });
-
+  
       const data = await response.json();
       console.log(data);
-
+  
       localStorage.setItem(`simulationData_${selectedMonth}`, JSON.stringify(data));
 
+      setError("success");
       setElements((prevElements) => ({
         ...prevElements,
         airQuality: { ...prevElements.airQuality, value: data.airQuality },
@@ -234,6 +241,8 @@ const Simulator = () => {
       }));
     } catch (error) {
       console.error("Error fetching simulation data:", error);
+      setError("error");
+      setErrorMessage("Error fetching simulation data. Please try again later.");
     }
   };
 
@@ -274,7 +283,7 @@ const Simulator = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 col-span-2 md:col-span-2">
             <div className="mb-4 md:mb-0">
               <p className="text-lg font-bold">Affected To</p>
-              <select className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded" value={affected} onChange={handleChange}>
+              <select className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded" value={affected || ""} onChange={handleChange}>
                 <option value="">Select Option</option>
                 {AffectedTo.map((item, index) => (
                   <option key={index} value={item}>
@@ -286,7 +295,7 @@ const Simulator = () => {
 
             <div className="mt-4 md:mt-0">
               <p className="text-lg font-bold">Select Month</p>
-              <input type="month" className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded" min="2020-01" max="2023-12" value={selectedMonth} onChange={handleMonthChange} />
+              <input type="month" className="bg-gray-700 hover:bg-gray-750 text-white w-full font-bold py-2 px-2 rounded" min="2020-01" max="2023-12" value={selectedMonth || ""} onChange={handleMonthChange} />
             </div>
 
             <div className="flex flex-col items-center mt-4 md:mt-0">
@@ -297,6 +306,13 @@ const Simulator = () => {
             </div>
           </div>
         </div>
+
+        <div>
+        {error === 'idle' && <p>Please select a month to fetch data.</p>}
+        {error === 'loading' && <p>Loading data...</p>}
+        {error === 'success' && <p>Data fetched successfully!</p>}
+        {error === 'error' && <p>{error}</p>}
+      </div>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           <div className="sm:col-span-1">
@@ -321,8 +337,8 @@ const Simulator = () => {
             <div key={index} className="flex flex-col items-center p-2 border border-gray-700 rounded-lg">
               <label className="text-xs font-bold mb-2 text-center break-words">{elements[key].label}</label>
               <div className="flex-grow"></div> {/* Spacer to push the slider to the bottom */}
-              <input type="range" min="0" max="100" value={elements[key].value} onChange={(event) => handleSliderChange(event, key)} className="slider-vertical" style={{ writingMode: "bt-lr", WebkitAppearance: "slider-vertical" }} />
-              <input type="number" min="0" max="100" value={elements[key].value} onChange={(event) => handleSliderChange(event, key)} className="mt-2 w-12 text-center bg-gray-700 text-white rounded" />
+              <input type="range" min="0" max="100" value={elements[key].value || 0} onChange={(event) => handleSliderChange(event, key)} className="slider-vertical" style={{ writingMode: "bt-lr", WebkitAppearance: "slider-vertical" }} />
+              <input type="number" min="0" max="100" value={elements[key].value || 0} onChange={(event) => handleSliderChange(event, key)} className="mt-2 w-12 text-center bg-gray-700 text-white rounded" />
             </div>
           ))}
         </div>
