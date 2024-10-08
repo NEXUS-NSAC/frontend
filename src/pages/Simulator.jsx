@@ -204,7 +204,7 @@ const Simulator = () => {
     }
 
     const url = `/api/generate/${selectedMonth}`;
-    console.log("url4");
+    console.log("url5");
 
     setError("loading");
     try {
