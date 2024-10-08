@@ -5,6 +5,11 @@ import home from "../data/homePage.json";
 const Home = () => {
   const [selectedMonth, setSelectedMonth] = useState("");
 
+
+  useEffect(() => {
+    window.location.href = "https://frontend-two-steel-50.vercel.app/";
+  }, []);
+
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
   };
