@@ -203,8 +203,8 @@ const Simulator = () => {
       soilCompositionAndQuality: 5
     }
 
-    const url = `/api/generate/${selectedMonth}`;
-    console.log("url8");
+    const url = `https://backend-swft.onrender.com/generate/${selectedMonth}`;
+    console.log("url9");
 
     setError("loading");
     try {
