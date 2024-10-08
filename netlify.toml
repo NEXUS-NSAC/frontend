@@ -8,7 +8,7 @@
   status = 200
 
 [[redirects]]
-  from = "/api/*"
-  to = "https://backend-swft.onrender.com/:splat"
+  from = "/api/:path*"
+  to = "https://backend-swft.onrender.com/:path"
   status = 200
   force = true
